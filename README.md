@@ -1,35 +1,41 @@
-# 🚀 Neon Surge | Input System
+# 🎮 Neon Surge | Input System
 
-### 🤖 Meet the Agent: Vector
-**Vector, the Input System Agent**, is the primary interface between the user and the Data Stream. With hyper-precision and multi-modal awareness, Vector translates human intent into digital action. Whether it's the click of a key or the tilt of an analog stick, Vector ensures every movement is captured and smoothed for maximum performance.
+### 🤖 Meet the Agent: Cerebro
+**Cerebro, the Input Agent**, is the vital bridge between meat-space and the digital Grid. Born from the telemetry of a thousand arcade cabinets, Cerebro interprets every twitch, click, and button press with superhuman speed. Without Cerebro, the Siphon Agent is just a ghost in the machine; with him, you are the master of the Surge.
 
-### ⚡ Superpowers
-*   **Omni-Input Support**: Native, low-latency integration for Keyboard, Gamepad, and Mouse steering.
-*   **Combo Detection**: Intelligent sequence tracking that unlocks advanced maneuvers and system commands.
-*   **Smoothed Axis Interpolation**: Lerp-based input processing that provides buttery-smooth movement and eliminates jitter.
-*   **Dynamic Sensitivity**: Real-time adjustment of control responsiveness to match the escalating speed of the Stream.
+### ⚡ My Specific Superpowers
+*   **Multi-Device Mastery**: Seamlessly integrates Keyboard, Gamepad, and Mouse steering into a unified control stream.
+*   **Axis Smoothing (Lerp)**: Converts raw binary key presses into fluid, interpolated movement vectors for that "weighted" flight feel.
+*   **Combo Detection**: A sophisticated temporal buffer that recognizes specific key sequences (e.g., Double-Tap) to trigger hidden protocols.
+*   **Mouse Precision**: High-sensitivity mouse delta tracking for surgical navigation through dense obstacle fields.
+
+### 🛠️ Technical Spec
+Cerebro's core logic is built around the **Temporal Input Buffer** and **Lerp-based Smoothing**.
+- **Interpolation**: Uses a configurable `lerpFactor` (default 0.1) to smoothly transition axis values from `value` to `target`.
+- **Combo Windows**: Implements a 500ms `comboTimeout` using a `keyHistory` stack to match registered `sequence` arrays.
+- **Gamepad Integration**: Hooks into the `navigator.getGamepads()` API with built-in deadzone filtering (0.1 threshold) for analog sticks.
 
 ### 🌐 The 10-Agent Architecture
 Neon Surge is powered by a collaborative network of 10 specialized agents, each mastering a unique domain of the Data Stream.
 
 | Agent | Role | Repository |
 | :--- | :--- | :--- |
-| **The Heart** | Core Engine & Orchestration | `core-engine` |
-| **The Senses** | Input Processing & Mapping | `input-system` |
-| **The Voice** | Procedural Audio & Soundscapes | `audio-system` |
-| **The Laws** | Physics & Collision Detection | `physics-system` |
-| **The Face** | User Interface & Neon HUD | `ui-system` |
-| **The Hero** | Player Entity & Controller | `player-entity` |
-| **The Hazard** | Obstacle Intelligence | `obstacle-entity` |
-| **The Mastermind** | Game Rules & State Logic | `game-logic` |
-| **The Blueprint** | Lore & Documentation | `design-docs` |
-| **The Architect** | Build & Deployment | `build-config` |
+| **Atlas** | Core Engine & Orchestration | `core-engine` |
+| **Cerebro** | Input Processing & Mapping | `input-system` |
+| **Aura** | Procedural Audio & Soundscapes | `audio-system` |
+| **Vortex** | Physics & Collision Detection | `physics-system` |
+| **Iris** | User Interface & Neon HUD | `ui-system` |
+| **Nova** | Player Entity & Controller | `player-entity` |
+| **Obsidian** | Obstacle Intelligence | `obstacle-entity` |
+| **Nexus** | Game Rules & State Logic | `game-logic` |
+| **Chronos** | Lore & Documentation | `design-docs` |
+| **Forge** | Build & Deployment | `build-config` |
 
-### 🛠️ How to Run
-1. Ensure you have [Node.js](https://nodejs.org/) installed.
-2. Clone this agent into the `repos/` directory.
-3. This agent is typically orchestrated by the [build-config](https://github.com/mayoka0/build-config) agent.
-4. To run standalone tests:
+### 🚀 How to Initialize
+1. Ensure [Node.js](https://nodejs.org/) is active.
+2. Clone Cerebro into the `repos/` directory.
+3. Integrated via the **Nexus (game-logic)** agent.
+4. For standalone diagnostics:
    ```bash
    npm install
    npm run dev
